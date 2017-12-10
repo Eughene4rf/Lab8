@@ -20,26 +20,26 @@ public class  Lab8
 
         ArrayList<String> obj = new ArrayList<>();
 
-        System.out.println("Adding and removing elements: ");
+        System.out.println("Добавление и изменение элементов: ");
         obj.add("Sasha");
         obj.add("Sasha");
         obj.add("Misha");
         obj.add("Anton");
         obj.add("Senya");
         obj.add("Dima");
-        System.out.println("Current array list is:"+obj);
+        System.out.println("Список элементов:"+obj);
 
         obj.add(0, "Dasha");
         obj.add(1, "Ann");
-        System.out.println("Current array list after addiding elements:"+obj);
+        System.out.println("Cписок поле добавления элементов:"+obj);
 
         //Remove elements
         obj.remove("Dima");
         obj.remove("Misha");
-        System.out.println("Current array list after removing elements:"+obj  +"\n");
+        System.out.println("Список после удаления элементов:"+obj  +"\n");
 
 
-        System.out.println("Searching for dublicates^ ");
+        System.out.println("Количество повторений элементов: ");
         HashMap<String, Integer> letters = new HashMap<String, Integer>();
         for (int i = 0; i < obj.size(); i++)
         {
@@ -54,33 +54,26 @@ public class  Lab8
             }
         }
         for (Map.Entry<String, Integer> entry : letters.entrySet()) {
-            System.out.println(""+ entry.getKey() + ", Number of dublicates = " + entry.getValue());
+            System.out.println(""+ entry.getKey() + ", Количество повторений = " + entry.getValue());
         }
 
-        System.out.println("\n" + "Revers of elements: ");
+        System.out.println("\n" + "Перестановка элементов: ");
         Collections.reverse(obj);
-        System.out.println("After reverse" + obj +"\n");
+        System.out.println("После перестановки" + obj +"\n");
 
-        System.out.println("Statistics for all element: ");
-        for (int a = 0; a < obj.size(); a++)
-        {
-            int yes=0;
-            for (int b=0; b<obj.size(); b++) if (obj.get(a).length()>=obj.get(b).length()) yes++;
-            if (yes==5)
-                System.out.println("The number of words that have more letters than the selected number: " +obj.get(a));
-        }
+
         int max = obj.get(0).length();
         for (int i = 0; i < obj.size(); i++)
         {
             if (obj.get(i).length() > max)
             {
                 max = obj.get(i).length();
-                System.out.println("Words with max lenght: "+obj.get(i));
+                System.out.println("Самое длинное слово: "+obj.get(i));
             }
             else if (obj.get(i).length() < max)
             {
                 max = obj.get(i).length();
-                System.out.println("Words with min lenght: "+obj.get(i));
+                System.out.println("Самое короткое слово: "+obj.get(i));
             }
         }
     }
